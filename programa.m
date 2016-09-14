@@ -482,11 +482,11 @@ switch str{val};
 case '-'
    Final_Wear = [1 1 1 1 1 1 1 1 1 1 1]; 
 case 'High' % User selects peaks.
-   Final_Wear = [.166 1 1 .166 .5 1 1 .166 .5 1 .867]; 
+   Final_Wear =(Final_We(1,:));
 case 'Average'
-   Final_Wear = [.166 1 1 .166 .867 1 1 .5 .867 1 1]; 
+   Final_Wear =(Final_We(2,:));
 case 'Low' % User selects sinc.
-   Final_Wear = [.5 1 1 .5 1 1 1 1 1 1 1]; 
+   Final_Wear =(Final_We(3,:));
 end
 % Set current data to the selected data set.
 guidata(hObject,handles)
@@ -688,11 +688,11 @@ switch str{val};
 case '-'    
    Final_Corr = [1 1 1 1 1 1 1 1 1 1 1]; 
 case 'High' % User selects peaks.
-   Final_Corr = [.166 1 1 .166 .5 1 1 .166 .5 1 .867]; 
+   Final_Corr =(Fin_Corros(1,:));
 case 'Average'
-   Final_Corr = [.166 1 1 .166 .5 1 1 .166 .5 1 .867]; 
+   Final_Corr =(Fin_Corros(2,:));
 case 'Low' % User selects sinc.
-   Final_Corr = [.166 1 1 .166 .5 1 1 .166 .5 1 .867]; 
+   Final_Corr =(Fin_Corros(3,:));
 end
 guidata(hObject,handles)
 disp(Final_Corr);
@@ -837,6 +837,7 @@ end
 Weigh=[Wmeca1 Wfunc1 Wape1 Wgeo1];
 Finito= Weigh*Convert;
 
+RIBELINO = Finito;
 RIBELINO = Critic.*Sani.*FireR.*Elect.*fin.*Fintemp.*P_compatib.*Finito;
 
 set(handles.final,'String',RIBELINO);
@@ -2049,9 +2050,9 @@ global Wgeo1
 val = get(hObject,'Value');
 switch val;
 case 1 % User selects peaks.
-   Wgeo1 = .25;
+   Wgeo1 = 1;
 case 2
-   Wgeo1 = 0.5;
+   Wgeo1 = 0.75;
 case 3 % User selects sinc.
    Wgeo1 = 0.5;
 case 4 % User selects sinc.
