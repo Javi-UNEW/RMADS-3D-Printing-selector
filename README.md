@@ -1,5 +1,5 @@
 # RMADS-3D-Printing-selector
-Source Matlab files for the different modules that make the Rapid Manufacturing Advise System (RMADS). 
+Source Matlab files for the different modules that make the Rapid Manufacturing Advice System (RMADS). 
 Please note it was created originally with Matlab 2008, and it's fully compatible with 2010 and 2011 provided you have the required toolboxes (fuzzy logic, neural networks, database). 
 For newer Matlab versions functionalities might change and you'll need to make minor tweaks on the code.
 
